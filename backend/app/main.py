@@ -44,8 +44,8 @@ app = FastAPI(
         "and self-hosted pretrained ONNX convolutional neural network inference for crop disease identification."
     ),
     openapi_url="/api/v1/openapi.json",
-    docs_url="/docs",
-    redoc_url="/redoc",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
     lifespan=lifespan
 )
 

@@ -6,6 +6,7 @@ import type { ServiceMode } from "./types";
  * Users can also toggle Demo Mode in Settings to preview offline/sample states.
  */
 export const API_BASE_URL: string =
+  (import.meta.env["VITE_BACKEND_URL"] as string | undefined) ||
   (import.meta.env["VITE_AGRIPILOT_API_URL"] as string | undefined) ||
   "/api/v1";
 
