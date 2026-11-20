@@ -1,0 +1,38 @@
+[
+  {
+    "file": "harvest.webp",
+    "title": "Paddy Harvest 01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Paddy_Harvest_01.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Zaheed_Sarwer_Khan&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Zaheed Sarwer Khan (page does not exist)\">Zaheed Sarwer Khan</a>",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "modifications": "Resized and converted to WebP; displayed with CSS crop. Original image is not retouched."
+  },
+  {
+    "file": "field.webp",
+    "title": "A Farmer walking in paddy field.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Farmer_walking_in_paddy_field.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Samdani.srabon&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Samdani.srabon (page does not exist)\">Samdani.srabon</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "modifications": "Resized and converted to WebP; displayed with CSS crop. Original image is not retouched."
+  },
+  {
+    "file": "leaf.webp",
+    "title": "Leafs of rice plant.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Leafs_of_rice_plant.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Sivabalachandar03&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Sivabalachandar03 (page does not exist)\">Sivabalachandar03</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "modifications": "Resized and converted to WebP; displayed with CSS crop. Original image is not retouched."
+  },
+  {
+    "file": "village.webp",
+    "title": "Farmers life in Bangladesh.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Farmers_life_in_Bangladesh.jpg",
+    "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Shameem_Reza\" title=\"User:Shameem Reza\">Shameem Reza</a>",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "modifications": "Resized and converted to WebP; displayed with CSS crop. Original image is not retouched."
+  }
+]

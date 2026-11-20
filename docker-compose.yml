@@ -1,0 +1,41 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: agripilot-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+psycopg://agripilot:secretpass@db:5432/agripilot
+      - SECRET_KEY=agripilot_bd_production_secure_secret_key_2026_bd
+      - CORS_ORIGINS=["http://localhost:5173","http://127.0.0.1:5173","http://localhost:80","http://127.0.0.1:80"]
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/models_weights:/app/models_weights
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: agripilot-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=agripilot
+      - POSTGRES_PASSWORD=secretpass
+      - POSTGRES_DB=agripilot
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agripilot -d agripilot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

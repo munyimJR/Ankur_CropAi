@@ -1,0 +1,340 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Ankur design system — "Growing with you."
+ * Forest green structure, ivory surfaces, lime action, leaf + amber accents.
+ * All colors are oklch tokens; components only use semantic utilities.
+ */
+
+@theme inline {
+  --font-sans:
+    "Plus Jakarta Sans", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    "Plus Jakarta Sans", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-bangla:
+    "Hind Siliguri", "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 6px);
+  --radius-lg: calc(var(--radius) - 2px);
+  --radius-xl: var(--radius);
+  --radius-2xl: calc(var(--radius) + 6px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 18px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-lime: var(--lime);
+  --color-lime-soft: var(--lime-soft);
+  --color-lime-foreground: var(--lime-foreground);
+  --color-leaf: var(--leaf);
+  --color-leaf-soft: var(--leaf-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-foreground: var(--amber-foreground);
+  --color-ivory: var(--ivory);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-ndvi-1: var(--ndvi-1);
+  --color-ndvi-2: var(--ndvi-2);
+  --color-ndvi-3: var(--ndvi-3);
+  --color-ndvi-4: var(--ndvi-4);
+  --color-ndvi-5: var(--ndvi-5);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-soft: var(--elev-soft);
+  --shadow-lift: var(--elev-lift);
+  --shadow-float: var(--elev-float);
+}
+
+:root {
+  --radius: 1.125rem; /* 18px card radius */
+
+  /* Brand palette */
+  --forest: oklch(0.322 0.053 171.5); /* #103C30 */
+  --forest-deep: oklch(0.259 0.04 170.9); /* #0B2A21 */
+  --forest-foreground: oklch(0.977 0.008 114.2);
+  --lime: oklch(0.904 0.157 126.2); /* #C5F279 */
+  --lime-soft: oklch(0.955 0.07 124);
+  --lime-foreground: oklch(0.259 0.04 170.9);
+  --leaf: oklch(0.536 0.087 160.2); /* #397D5C */
+  --leaf-soft: oklch(0.94 0.03 160);
+  --amber: oklch(0.76 0.13 69.4); /* #E6A14B */
+  --amber-soft: oklch(0.95 0.045 75);
+  --amber-foreground: oklch(0.42 0.09 60);
+  --ivory: oklch(0.977 0.008 114.2); /* #F7F8F2 */
+  --sky: oklch(0.62 0.09 235);
+  --sky-soft: oklch(0.95 0.025 230);
+
+  /* Vegetation index ramp (low → high) */
+  --ndvi-1: oklch(0.66 0.11 60);
+  --ndvi-2: oklch(0.8 0.13 90);
+  --ndvi-3: oklch(0.86 0.15 122);
+  --ndvi-4: oklch(0.64 0.12 150);
+  --ndvi-5: oklch(0.45 0.08 165);
+
+  /* Semantic shadcn tokens */
+  --background: var(--ivory);
+  --foreground: oklch(0.24 0.035 168);
+  --card: oklch(0.995 0.003 110);
+  --card-foreground: oklch(0.24 0.035 168);
+  --popover: oklch(0.995 0.003 110);
+  --popover-foreground: oklch(0.24 0.035 168);
+  --primary: var(--forest);
+  --primary-foreground: var(--forest-foreground);
+  --secondary: oklch(0.945 0.013 118);
+  --secondary-foreground: var(--forest);
+  --muted: oklch(0.945 0.013 118);
+  --muted-foreground: oklch(0.5 0.02 160);
+  --accent: var(--lime-soft);
+  --accent-foreground: var(--forest);
+  --destructive: oklch(0.56 0.17 29);
+  --destructive-foreground: oklch(0.985 0.005 100);
+  --border: oklch(0.915 0.016 118);
+  --input: oklch(0.9 0.018 118);
+  --ring: var(--leaf);
+
+  --chart-1: var(--leaf);
+  --chart-2: var(--amber);
+  --chart-3: var(--sky);
+  --chart-4: var(--lime);
+  --chart-5: var(--forest);
+
+  --sidebar: var(--forest);
+  --sidebar-foreground: oklch(0.9 0.02 130);
+  --sidebar-primary: var(--lime);
+  --sidebar-primary-foreground: var(--lime-foreground);
+  --sidebar-accent: oklch(0.37 0.055 170);
+  --sidebar-accent-foreground: var(--forest-foreground);
+  --sidebar-border: oklch(0.4 0.05 170);
+  --sidebar-ring: var(--lime);
+
+  /* Elevation & surfaces */
+  --elev-soft:
+    0 1px 2px oklch(0.3 0.04 170 / 0.05),
+    0 4px 16px -6px oklch(0.3 0.04 170 / 0.1);
+  --elev-lift:
+    0 2px 4px oklch(0.3 0.04 170 / 0.05),
+    0 18px 40px -16px oklch(0.3 0.05 170 / 0.24);
+  --elev-float: 0 30px 80px -24px oklch(0.2 0.04 170 / 0.45);
+  --glass: oklch(0.995 0.004 110 / 0.72);
+  --glass-dark: oklch(0.26 0.04 170 / 0.55);
+  --scrim-hero: linear-gradient(
+    95deg,
+    oklch(0.2 0.04 170 / 0.88) 0%,
+    oklch(0.22 0.04 170 / 0.62) 38%,
+    oklch(0.22 0.04 170 / 0.12) 70%,
+    transparent 100%
+  );
+  --scrim-bottom: linear-gradient(
+    0deg,
+    oklch(0.2 0.04 170 / 0.85) 0%,
+    oklch(0.2 0.04 170 / 0) 60%
+  );
+  --scrim-top: linear-gradient(
+    180deg,
+    oklch(0.2 0.04 170 / 0.55) 0%,
+    transparent 100%
+  );
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  html[lang="bn"] body {
+    font-family: var(--font-bangla);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--lime);
+    color: var(--lime-foreground);
+  }
+}
+
+/* Typography */
+@utility font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  font-feature-settings: "ss01";
+}
+@utility text-hero {
+  font-size: clamp(2.9rem, 7.4vw, 6.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 700;
+}
+@utility text-display {
+  font-size: clamp(2.1rem, 4.4vw, 3.9rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+}
+@utility text-title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+@utility eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Surfaces */
+@utility surface {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--elev-soft);
+}
+@utility glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+@utility glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+@utility scrim-hero {
+  background: var(--scrim-hero);
+}
+@utility scrim-bottom {
+  background: var(--scrim-bottom);
+}
+@utility scrim-top {
+  background: var(--scrim-top);
+}
+@utility interactive {
+  transition:
+    transform 240ms var(--ease-out),
+    box-shadow 240ms var(--ease-out),
+    background-color 200ms var(--ease-out),
+    border-color 200ms var(--ease-out),
+    color 200ms var(--ease-out);
+}
+@utility botanical-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    oklch(0.32 0.05 171 / 0.09) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+}
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@utility pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}
+
+/* Scan line used by the crop analysis animation */
+@keyframes scan-sweep {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1000%);
+    opacity: 0;
+  }
+}
+@utility animate-scan {
+  animation: scan-sweep 2.2s var(--ease-out) infinite;
+}
+@keyframes soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@utility animate-soft-pulse {
+  animation: soft-pulse 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

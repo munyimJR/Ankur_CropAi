@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.env.local
+*.tsbuildinfo
+
+# Python & caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Database & logs
+*.db
+*.sqlite3
+*.log
+
+# Dynamic uploads (preserve folder via .gitkeep)
+backend/uploads/*
+!backend/uploads/.gitkeep
